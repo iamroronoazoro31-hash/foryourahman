@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Government Polytechnic Khatima | Official</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #05070a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+        }
+
+        .hero-text {
+            text-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+        }
+
+        .gradient-border {
+            border: 1px solid transparent;
+            background: linear-gradient(#05070a, #05070a) padding-box,
+                        linear-gradient(to right, #3b82f6, #8b5cf6) border-box;
+        }
+
+        section {
+            padding: 100px 20px;
+        }
+
+        .animate-up {
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Improved Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #05070a; }
+        ::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Header -->
+    <nav class="fixed w-full z-50 px-6 py-4 flex justify-between items-center bg-black/50 backdrop-blur-md border-b border-white/10">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center font-bold">GPK</div>
+            <span class="font-bold tracking-tight text-lg hidden sm:block">GP KHATIMA</span>
+        </div>
+        <div class="hidden md:flex gap-8 text-sm font-medium text-gray-300">
+            <a href="#" class="hover:text-white transition">Home</a>
+            <a href="#about" class="hover:text-white transition">About</a>
+            <a href="#departments" class="hover:text-white transition">Departments</a>
+            <a href="#campus" class="hover:text-white transition">Campus</a>
+            <a href="#contact" class="hover:text-white transition">Contact</a>
+        </div>
+        <button class="bg-blue-600 hover:bg-blue-700 px-5 py-2 rounded-full text-sm font-bold transition">Apply Now</button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex flex-col justify-center items-center text-center">
+        <div class="animate-up">
+            <span class="text-blue-500 font-bold tracking-[0.3em] text-xs uppercase mb-4 block">Uttarakhand Technical Education</span>
+            <h1 class="text-6xl md:text-8xl font-black mb-6 leading-none hero-text">
+                GOVERNMENT<br><span class="text-blue-600">POLYTECHNIC</span>
+            </h1>
+            <p class="text-gray-400 max-w-2xl text-lg md:text-xl mb-10 mx-auto">
+                Khatima ka sabse pratishthit takniki sansthan. Hum banate hain kal ke engineers aur innovators.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="bg-white text-black px-8 py-3 rounded-full font-bold hover:scale-105 transition">Explore Courses</button>
+                <button class="glass px-8 py-3 rounded-full font-bold hover:bg-white/10 transition">Virtual Tour</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Principal Message Section -->
+    <section id="about" class="max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="glass p-2">
+                <div class="bg-gray-800 rounded-xl h-[400px] flex items-center justify-center overflow-hidden">
+                    <!--  -->
+                    <i class="fas fa-user-tie text-8xl text-white/10"></i>
+                </div>
+            </div>
+            <div>
+                <h2 class="text-4xl font-bold mb-6">Principal's <span class="text-blue-500">Message</span></h2>
+                <p class="text-gray-400 text-lg leading-relaxed mb-6">
+                    "Hamara maqsad sirf kitabi gyan dena nahi hai, balki students ko industry ke liye tayyar karna hai. Government Polytechnic Khatima mein hum discipline aur practical learning par focus karte hain."
+                </p>
+                <div class="font-bold">
+                    <p class="text-white text-xl">Shri K.S. Pathani</p>
+                    <p class="text-blue-500">Principal, GP Khatima</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Departments Section -->
+    <section id="departments" class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold">Hamare <span class="text-blue-500">Departments</span></h2>
+            <p class="text-gray-500 mt-4">Top class technical education in three core branches.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="glass p-8 hover:border-blue-500/50 transition cursor-default">
+                <div class="w-14 h-14 bg-blue-600/20 rounded-xl flex items-center justify-center mb-6">
+                    <i class="fas fa-microchip text-2xl text-blue-500"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Mechanical Engineering</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Modern workshops aur machinery ke saath practical knowledge.</p>
+            </div>
+            <div class="glass p-8 hover:border-blue-500/50 transition cursor-default">
+                <div class="w-14 h-14 bg-blue-600/20 rounded-xl flex items-center justify-center mb-6">
+                    <i class="fas fa-bolt text-2xl text-blue-500"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Electrical Engineering</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Power systems aur electronics ki gehri samajh.</p>
+            </div>
+            <div class="glass p-8 hover:border-blue-500/50 transition cursor-default">
+                <div class="w-14 h-14 bg-blue-600/20 rounded-xl flex items-center justify-center mb-6">
+                    <i class="fas fa-city text-2xl text-blue-500"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Civil Engineering</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Infrastructure aur design mein expert banne ki tayyari.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Placements / Partners -->
+    <section class="bg-white/5 py-20">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h3 class="text-gray-500 font-bold uppercase tracking-widest text-sm mb-10">Hamare Placement Partners</h3>
+            <div class="flex flex-wrap justify-center gap-12 opacity-40 grayscale">
+                <span class="text-2xl font-black">TATA MOTORS</span>
+                <span class="text-2xl font-black">BAJAJ AUTO</span>
+                <span class="text-2xl font-black">L&T CONSTRUCTION</span>
+                <span class="text-2xl font-black">HERO MOTOCORP</span>
+                <span class="text-2xl font-black">MARUTI SUZUKI</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section id="campus" class="max-w-7xl mx-auto">
+        <h2 class="text-4xl font-bold mb-12 text-center">Campus <span class="text-blue-500">Facilities</span></h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="glass overflow-hidden group">
+                <div class="h-48 bg-gray-800 flex items-center justify-center">
+                    <i class="fas fa-book text-4xl text-white/10 group-hover:scale-110 transition"></i>
+                </div>
+                <div class="p-6">
+                    <h4 class="font-bold">Library</h4>
+                    <p class="text-gray-500 text-xs mt-2">Latest technical books & journals.</p>
+                </div>
+            </div>
+            <div class="glass overflow-hidden group">
+                <div class="h-48 bg-gray-800 flex items-center justify-center">
+                    <i class="fas fa-flask text-4xl text-white/10 group-hover:scale-110 transition"></i>
+                </div>
+                <div class="p-6">
+                    <h4 class="font-bold">Labs</h4>
+                    <p class="text-gray-500 text-xs mt-2">Fully equipped modern laboratories.</p>
+                </div>
+            </div>
+            <div class="glass overflow-hidden group">
+                <div class="h-48 bg-gray-800 flex items-center justify-center">
+                    <i class="fas fa-wifi text-4xl text-white/10 group-hover:scale-110 transition"></i>
+                </div>
+                <div class="p-6">
+                    <h4 class="font-bold">Wi-Fi Campus</h4>
+                    <p class="text-gray-500 text-xs mt-2">High speed internet for research.</p>
+                </div>
+            </div>
+            <div class="glass overflow-hidden group">
+                <div class="h-48 bg-gray-800 flex items-center justify-center">
+                    <i class="fas fa-bus text-4xl text-white/10 group-hover:scale-110 transition"></i>
+                </div>
+                <div class="p-6">
+                    <h4 class="font-bold">Transport</h4>
+                    <p class="text-gray-500 text-xs mt-2">Bus facility for local students.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Footer -->
+    <footer id="contact" class="bg-black pt-20 pb-10 border-t border-white/10 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 mb-16">
+            <div>
+                <h4 class="text-xl font-bold mb-6">GP KHATIMA</h4>
+                <p class="text-gray-500 text-sm leading-relaxed">
+                    Government Polytechnic Khatima, Uttarakhand ka ek agrim sansthan hai jo yuvaon ko takniki shiksha ke kshetra mein sashakt bana raha hai.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-xl font-bold mb-6">Contact Info</h4>
+                <div class="space-y-4 text-sm text-gray-400">
+                    <p><i class="fas fa-map-marker-alt text-blue-500 mr-3"></i> Khatima, U.S. Nagar, Uttarakhand</p>
+                    <p><i class="fas fa-envelope text-blue-500 mr-3"></i> info@gpkhatima.org.in</p>
+                    <p><i class="fas fa-phone text-blue-500 mr-3"></i> +91-XXXXXXXXXX</p>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-xl font-bold mb-6">Quick Links</h4>
+                <ul class="text-sm text-gray-400 space-y-3">
+                    <li><a href="#" class="hover:text-white">UBTER Board</a></li>
+                    <li><a href="#" class="hover:text-white">Examination Cell</a></li>
+                    <li><a href="#" class="hover:text-white">Student Login</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center text-gray-600 text-xs border-t border-white/5 pt-8">
+            &copy; 2024 Government Polytechnic Khatima. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Simple elegant 3D background (Stars)
+        let scene, camera, renderer, stars;
+
+        function init() {
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            
+            renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('bg-canvas'), antialias: true, alpha: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(window.devicePixelRatio);
+
+            const starGeometry = new THREE.BufferGeometry();
+            const starMaterial = new THREE.PointsMaterial({ color: 0xffffff, size: 0.7 });
+
+            const starVertices = [];
+            for (let i = 0; i < 3000; i++) {
+                const x = (Math.random() - 0.5) * 2000;
+                const y = (Math.random() - 0.5) * 2000;
+                const z = -Math.random() * 2000;
+                starVertices.push(x, y, z);
+            }
+
+            starGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starVertices, 3));
+            stars = new THREE.Points(starGeometry, starMaterial);
+            scene.add(stars);
+
+            camera.position.z = 1;
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            stars.rotation.y += 0.0005;
+            stars.rotation.x += 0.0002;
+            renderer.render(scene, camera);
+        }
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        window.onload = () => {
+            init();
+            animate();
+        };
+
+        // Simple scroll animation trigger
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-up');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section > div').forEach(div => observer.observe(div));
+    </script>
+</body>
+</html>
